@@ -16,7 +16,7 @@ class Generator(View):
         form = GuessForm(request.POST or None)
         if form.is_valid():
             human_guess = form.cleaned_data['human_guess']
-            a = randint(0, 1)
+            a = randint(0, 20)
             try:
                 if a == human_guess:
                     messages.success(request, "Correct Guess!\n The correct answer is:" + str(a))
