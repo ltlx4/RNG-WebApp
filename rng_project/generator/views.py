@@ -18,12 +18,14 @@ class Generator(View):
         form = GuessForm(request.POST or None)
         if form.is_valid():
             human_guess = form.cleaned_data['human_guess']
-            a = randint(0, 20)
+            # a = randint(0, 20)
+            a = 0
             if human_guess > 20 or human_guess < 0:
-                messages.error(request, "Input out of range")
+                messages.error(request, "Input out of range. Try numbers between 0 and 20.")
+                return redirect(request.path)
 
             if a == human_guess:
-                messages.success(request, "Correct Guess!\n The correct answer is:" + str(a))
+                messages.info(request, "Great Guess!\n The correct answer was:" + str(a))
                 return redirect(request.path)
             else:
                 messages.error(request, "Wrong Guess!\n The correct answer was:" + str(a))
