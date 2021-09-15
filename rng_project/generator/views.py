@@ -9,21 +9,22 @@ from random import randint
 class Generator(View):
     
     def get(self, request, *args, **kwargs):
+        msg = request.session.get('msg', False)
+        if (msg): del(request.session['msg'])
         form = GuessForm()
-        return render(request, 'rng_generator/form.html', {'form': form})
+        return render(request, 'rng_generator/form.html', {'form': form, 'message': msg})
 
     def post(self, request, *args, **kwargs):
         form = GuessForm(request.POST or None)
         if form.is_valid():
             human_guess = form.cleaned_data['human_guess']
             a = randint(0, 20)
-            try:
-                if a == human_guess:
-                    messages.success(request, "Correct Guess!\n The correct answer is:" + str(a))
-                    return redirect('index')
-                else:
-                    messages.error(request, "Wrong Guess!\n The correct answer was:" + str(a))
-                    return redirect('index')
-            except KeyError:
-                messages.error(request, "Not Valid, Try again")
-                return render('index')
+            if human_guess > 20 or human_guess < 0:
+                messages.error(request, "Input out of range")
+
+            if a == human_guess:
+                messages.success(request, "Correct Guess!\n The correct answer is:" + str(a))
+                return redirect(request.path)
+            else:
+                messages.error(request, "Wrong Guess!\n The correct answer was:" + str(a))
+                return redirect(request.path)
