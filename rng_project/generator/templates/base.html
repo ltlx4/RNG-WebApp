@@ -1,0 +1,87 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+    <title>RNG Project</title>
+  </head>
+  <body>
+    <div class="static-slider10">
+        <div class="container">
+            <!-- Row  -->
+            <div class="row justify-content-center ">
+            <!-- Column -->
+            <div class="col-md-10 align-self-center text-center">
+                <h1 class="my-6 title text-white text-uppercase">Welcome to the Random Generator game</h1>
+                <h6 class="text-white">Try to choose a number between 0-20 and the computer will do the same. If both guesses are the same number, YOU WIN!</h6>
+                <a class="btn btn-outline-light rounded-pill btn-md mt-3" href="#game"><span>Check it out!</span></a>
+            </div>
+            <!-- Column -->
+
+            </div>
+        </div>
+        </div>
+    <div id="game" class="container mt-5 pt-5 text-center text-white h4">
+        {% if messages %}
+            {% for message in messages %}
+                <div class="alert {{ message.tags }} alert-dismissible" role="alert">
+                    {{ message }}
+                </div>
+            {% endfor %}
+        {% endif %}
+        
+        {% block content %} 
+
+        {% endblock content %} 
+    </div>
+
+    <div class='container-fluid'>
+        <div class="card">
+            <div class="heading text-center">
+                <div class="head1">Random Number Generator</div>
+                <p class="bdr"></p>
+            </div>
+            <div class="card-body   ">
+                <div class="row m-0 pt-4">
+                    <div class="card col-12 col-md-6">
+                        <div class="card-content"> <i class="fas fa-random fa-3x"></i>
+                            <div class="card-title"> RECHARGE REPEAT CUSTOMER </div>
+                            <p><small>Save customers' cards for future phone orders</small></p>
+                            <div class="learn-more">
+                                <p> <small> LEARN MORE <label><i class="fas fa-angle-right"></i></label> </small> </p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="card col-12 col-md-6">
+                        <div class="card-content"> <i class="center fas fa-cannabis fa-3x "></i>
+                            <div class="card-title"> ACCEPT ELECTRONIC CHECK </div>
+                            <p><small>Save customers' cards for future phone orders</small></p>
+                            <div class="learn-more">
+                                <p> <small> LEARN MORE <label><i class="fas fa-angle-right"></i></label> </small> </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="card-footer row m-0">
+               
+                <div class="footer-content">
+                    <p> <small class="follow-text">FOLLOW US ON SOCIAL MEDIA</small> <label class="footer-right"> <i class="fab fa-instagram"></i> <i class="fab fa-facebook-square"></i> <i class="fab fa-linkedin"></i> <i class="fab fa-twitter-square"></i> </label> </p>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+  </body>
+</html>

@@ -1,0 +1,139 @@
+html {
+	scroll-behavior: smooth;
+}
+
+body {
+    background-color: black;
+}
+
+.card {
+    background-color: #616161;
+    color: white;
+    margin-top: 50px;
+    border: none
+}
+
+.head1 {
+    font-weight: 900;
+    font-size: 30px
+}
+
+.bdr {
+    border-bottom: 1.5px solid #007bff;
+    width: 65px;
+    margin-right: auto;
+    margin-left: auto
+}
+
+.text-white {
+    -webkit-text-stroke: .7px white;
+
+}
+
+.card-footer {
+    justify-content: space-between;
+    border: none;
+    background: none;
+    border-bottom: 0.5px solid #9E9E9E
+}
+
+.footer-right>i {
+    margin-left: 15px
+}
+
+.fa-hand-holding-usd {
+    color: #007bff
+}
+
+.fa-handshake {
+    color: #007bff
+}
+
+.card-title {
+    margin-bottom: .75rem;
+    font-weight: 900;
+    font-size: 15px;
+    margin-top: 1.75rem
+}
+
+.learn-more {
+    color: #007bff
+}
+
+.fa-angle-right {
+    margin-left: 10px
+}
+
+.fa-3x {
+    color: #007bff
+}
+
+.card-content {
+    padding-right: 40px;
+    padding-left: 30px;
+    padding-bottom: 10px;
+    padding-top: 10px;
+    text-align: center;
+}
+
+.card-content>p {
+    color: #9E9E9E
+}
+
+.heading {
+    position: relative;
+    top: 75px
+}
+
+.follow-text {
+    color: #9E9E9E;
+    margin: 0 auto;
+}
+
+@import url(//fonts.googleapis.com/css?family=Montserrat:400,700);
+.static-slider10 {
+  font-family: "Montserrat", sans-serif;
+  font-weight: 300;
+	padding: 16% 0;
+  background-size: cover;
+  background-color: #007bff;
+}
+.static-slider10 .title {
+  font-weight: 600;
+  font-size: 48px;
+  line-height: 60px;
+}
+
+.static-slider10 .subtitle {
+    line-height: 24px;
+}
+
+@media (max-width: 900px) {
+  .static-slider10 .title {
+    font-size: 40px;
+    line-height: 45px;
+  }
+}
+
+.static-slider10 .btn-md {
+    padding: 15px 45px;
+    font-size: 16px;
+}
+
+.static-slider10 .badge {
+	line-height: 21px;
+}
+
+.form-control {
+    width: 25%;
+    margin: .7em auto;
+}
+
+.btn:hover {
+    background-color: white;
+    color: #007bff;
+}
+
+.footer-content {
+    margin: 0 auto;
+}
